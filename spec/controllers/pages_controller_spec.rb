@@ -43,4 +43,16 @@ describe PagesController do
       expect(page).to have_content('About')
     end
   end
+
+  describe "GET 'help'" do
+    it "should be successful" do
+      get 'help'
+      response.should be_success
+    end
+    
+    it "should have the content 'Help'" do
+      visit '/pages/help'
+      expect(page).to have_content('Help')
+    end
+  end
 end
