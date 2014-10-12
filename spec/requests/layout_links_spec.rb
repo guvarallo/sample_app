@@ -4,21 +4,21 @@ describe "LayoutLinks" do
 
 	it "should have a Home page at '/'" do
 		get '/'
-		response.should have_selector('title', :content => "Home")
+		response.body.should include 'Sample App</h1>'
 	end
 
 	it "should have a Contact page at '/contact'" do
 		get '/contact'
-		response.should have_selector('title', :content => "Contact")
+		response.body.should include 'Contact</h1>'
 	end
 
 	it "should have an About page at '/about'" do
 		get '/about'
-		response.should have_selector('title', :content => "About")
+		response.body.should include 'About</h1>'
 	end
 
-	# it "should have a Help page at '/help'" do
-	# 	get '/help'
-	# 	response.should have_selector('title', :content => "Help")
-	# end
+	it "should have a Help page at '/help'" do
+		get '/help'
+		response.body.should include 'Help</h1>'
+	end
 end

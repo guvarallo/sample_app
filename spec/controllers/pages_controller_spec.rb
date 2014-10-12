@@ -10,7 +10,7 @@ describe PagesController do
     end
     
     it "should have the content 'Sample App'" do
-      visit '/pages/home'
+      visit '/'
       expect(page).to have_content('Sample App')
     end
     
@@ -27,7 +27,7 @@ describe PagesController do
     end
     
     it "should have the content 'Contact'" do
-      visit '/pages/contact'
+      visit '/contact'
       expect(page).to have_content('Contact')
     end
   end
@@ -39,7 +39,7 @@ describe PagesController do
     end
     
     it "should have the content 'About'" do
-      visit '/pages/about'
+      visit '/about'
       expect(page).to have_content('About')
     end
   end
@@ -51,7 +51,7 @@ describe PagesController do
     end
     
     it "should have the content 'Help'" do
-      visit '/pages/help'
+      visit '/help'
       expect(page).to have_content('Help')
     end
   end
