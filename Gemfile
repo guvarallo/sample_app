@@ -44,6 +44,7 @@ group :development, :test do
   gem 'childprocess', '0.3.6'
   gem 'autotest'
   gem 'capybara', '2.4.1'
+  gem 'webrat'
 end
 
 

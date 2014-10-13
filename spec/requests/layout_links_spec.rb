@@ -21,4 +21,23 @@ describe "LayoutLinks" do
 		get '/help'
 		response.body.should include 'Help</h1>'
 	end
+
+	it "should have a signup page at '/signup'" do
+		get '/signup'
+		response.body.should include 'Sign up</h1>'
+	end
+
+	it "should have the right links on the layout" do
+		visit root_path
+    click_link "About"
+    expect(page).to have_content('About')
+    click_link "Help"
+    expect(page).to have_content('Help')
+    click_link "Contact"
+    expect(page).to have_content('Contact')
+    click_link "Home"
+    expect(page).to have_content('Sample App')
+    click_link "Sign up now!"
+    expect(page).to have_content('Sign up')
+	end
 end
