@@ -1,5 +1,12 @@
 require 'rubygems'
 require 'spork'
+require "webrat"
+require 'webrat/core/matchers'
+include Webrat::Methods
+ 
+Webrat.configure do |config| 
+config.mode = :rack
+end
 #uncomment the following line to use spork with the debugger
 #require 'spork/ext/ruby-debug'
 

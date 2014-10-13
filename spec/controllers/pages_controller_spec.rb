@@ -3,56 +3,55 @@ require 'spec_helper'
 describe PagesController do
   render_views
 
-  describe "GET 'home'" do
-    it "should be successful" do
-      get 'home'
-      response.should be_success
-    end
-    
+  describe "Home page" do
+
     it "should have the content 'Sample App'" do
-      visit '/'
+      visit root_path
       expect(page).to have_content('Sample App')
     end
-    
-    it "should have a non-blank body" do
-      get 'home'
-      response.body.should_not =~ /<body>\s*<\/body>/
-    end  
-  end
-  
-  describe "GET 'contact'" do
-    it "should be successful" do
-      get 'contact'
-      response.should be_success
-    end
-    
-    it "should have the content 'Contact'" do
-      visit '/contact'
-      expect(page).to have_content('Contact')
+
+    it "should have the base title 'Home'" do
+      visit root_path
+      expect(page).to have_title('Ruby on Rails Tutorial Sample App | Home')
     end
   end
 
-  describe "GET 'about'" do
-    it "should be successful" do
-      get 'about'
-      response.should be_success
+  describe "Help page" do
+
+    it "should have the content 'Help'" do
+      visit help_path
+      expect(page).to have_content('Help')
     end
-    
+
+    it "should have the title 'Help'" do
+      visit help_path
+      expect(page).to have_title("Ruby on Rails Tutorial Sample App | Help")
+    end
+  end
+
+  describe "About page" do
+
     it "should have the content 'About'" do
-      visit '/about'
+      visit about_path
       expect(page).to have_content('About')
     end
+
+    it "should have the title 'About'" do
+      visit about_path
+      expect(page).to have_title("Ruby on Rails Tutorial Sample App | About")
+    end
   end
 
-  describe "GET 'help'" do
-    it "should be successful" do
-      get 'help'
-      response.should be_success
+  describe "Contact page" do
+
+    it "should have the content 'Contact'" do
+      visit contact_path
+      expect(page).to have_content('Contact')
     end
-    
-    it "should have the content 'Help'" do
-      visit '/help'
-      expect(page).to have_content('Help')
+
+    it "should have the title 'Contact'" do
+      visit contact_path
+      expect(page).to have_title("Ruby on Rails Tutorial Sample App | Contact")
     end
   end
 end
