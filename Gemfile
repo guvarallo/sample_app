@@ -45,6 +45,7 @@ group :development, :test do
   gem 'autotest'
   gem 'capybara', '2.4.1'
   gem 'webrat'
+  gem 'annotate'
 end
 
 
