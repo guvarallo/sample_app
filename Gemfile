@@ -31,4 +31,5 @@ group :development, :test do
   gem 'webrat'
   gem 'annotate'
   gem 'sqlite3', '1.3.8'
+  gem 'factory_girl_rails'
 end

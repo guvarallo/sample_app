@@ -3,6 +3,7 @@ SampleApp::Application.routes.draw do
   resources :users
 
   root 'pages#home'
+  
   get  '/contact'   => 'pages#contact'
   get  '/about'     => 'pages#about'
   get  '/help'      => 'pages#help'
