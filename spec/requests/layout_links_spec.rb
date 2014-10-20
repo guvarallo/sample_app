@@ -27,6 +27,11 @@ describe "LayoutLinks" do
 		response.body.should include 'Sign up</h1>'
 	end
 
+		it "should have a signup page at '/signin'" do
+		get '/signin'
+		response.body.should include 'Sign in</h1>'
+	end
+
 	it "should have the right links on the layout" do
 		visit root_path
     click_link "About"
